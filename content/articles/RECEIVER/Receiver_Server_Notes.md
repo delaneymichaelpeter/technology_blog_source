@@ -1,7 +1,7 @@
 Title: EBSCO Receiver Application Information 
 Author: Peter Delaney 
 Date: 2020-01-10 9:00
-Category: receiverapp 
+Category: receiver
 Tags: java, receiver, devops
 Slug: receiverapp-tech-notes 
 Summary: Technical notes about the EBSCO Receiver Application

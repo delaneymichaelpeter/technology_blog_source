@@ -49,8 +49,8 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('My LinkedIn', 'http://linkedin.com/in/peterdelaney'),
-         ('My GitHub', 'http://github.com/delaneymichaelpeter'),
+LINKS = (('Delaney LinkedIn', 'http://linkedin.com/in/peterdelaney'),
+         ('Delaney GitHub', 'http://github.com/delaneymichaelpeter'),
          ('Jinja2', 'http://jinja.pocoo.org/'),
          ('You can modify those links in your config file', '#'),)
 
