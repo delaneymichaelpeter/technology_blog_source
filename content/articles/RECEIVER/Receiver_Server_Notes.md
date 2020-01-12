@@ -20,14 +20,31 @@ ssh builder@10.80.99.166: password:  t0pc4t
 ```
 
 
-# Database Information
-1. PROD: pdc-v-rcvrappdbp011.epnet.com:3306 rcvrappuser/rcvrappassXXX 
-2. DEV: 10.80.100.62:3306  receiver kng/ebsco
-3. MySql Database: http://confluence/display/ART/Receiver+App+MySQL+Database
+# ReceiverApp Database Information
+1. **PROD:** pdc-v-rcvrappdbp011.epnet.com:3306 rcvrappuser/rcvrappassXXX 
+2. **DEV:** 10.80.100.62:3306  receiver kng/ebsco
+3. **MySql** Database: http://confluence/display/ART/Receiver+App+MySQL+Database
+
+### **Dump Data to file (only data no schema)**
+
+**example:** *mysqldump -h <mysql-server-ip> -P <port> -u <userid> -p --no-create-info <databasename> > dumptofile.sql*
+```bash
+# Dump Data without schema
+mysqldump -h 10.80.100.62 -P 3306 -u kng -p  --no-create-info receiver > receiver_dump_data.sql
+```
+
+### **Import Data from file into Mysql**
+*Need to log into mysql on the command line
+**example:** *mysql -h <mysql-server-ip> -P <port> -u <userid> -p <databasename> < dumptofile.sql*
+```bash
+# Import dump data into another database.  This is a AWS RDS mysql instance
+ mysql -h receiver-delaney.cg2se2vkww6u.us-east-2.rds.amazonaws.com -P 3306 -u shakenbake -p  receiver < receiver_dump_data.sql
+```
 
 
 
-** Installing OpsGenie on linux
+
+# Installing OpsGenie on linux
 **Commands Executed to install OpsGenie**
 ```bash
 wget https://dl.google.com/go/go1.12.5.linux-amd64.tar.gz
@@ -48,7 +65,7 @@ ls -l $GOPATH/
 ```
 
 
-# Download OpsGenie go files via go
+## Download OpsGenie go files via go
 **Get github.com/opsgen/opsgenie-lamp**
 **If above does NOT work download via https://github.com/opsgenie/opsgenie-lamp and copy to server**
 ```bash
