@@ -1,7 +1,6 @@
 Title: AWS Configuration Notes 
 Date: 2020-01-07 10:20
 Modified: 2010-12-05 19:30
-Category: AWS CLI
 Tags: aws, cli
 Slug: my-super-post
 Authors: Peter Delaney 

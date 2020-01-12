@@ -1,7 +1,6 @@
 Title:  OpenStack Related Information
 Author: Peter Delaney 
 Date: 2020-01-10 9:00
-Category: openstack 
 Tags: openstack, devops
 Slug: openstack-tech-notes 
 Summary: OpenStack Related Information  
