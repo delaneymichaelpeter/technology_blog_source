@@ -14,7 +14,7 @@ find . -name '*.log' -exec rm -fr {} \;
 ```
 **Search for a class file inside a jar file**
 ```bash
-find . -name '*.jar' -exec bash -c "echo {} &amp;&amp; jar tvf {} | grep Name_Searching_For " \;
+find . -name '*.jar' -exec bash -c "echo {} && jar tvf {} | grep Name_Searching_For " \;
 ```
 
 **See if a certain process is listening on a port**
@@ -32,7 +32,7 @@ echo /proc/`ps -ef | grep java | grep -v grep | awk '{ print $2 }'`/fd | xargs l
 
 **Shows Files Open Related to Java or ACES **
 ```bash
-ls /proc//fd | wc -l
+ls /proc/fd | wc -l
 ```
 
 **Shows All of the Processes and the Tree **
@@ -74,7 +74,7 @@ more /etc/fstab (file that tells you the names of mount points)
 mount -a
 
 # Remove mount point
-umount /xxxx
+umount <directory-where-mount-exists>
 ```
 
 ## Network IO
@@ -86,35 +86,36 @@ svctm: avg. time servicing request
 await should be close to svctm, means all time spent processing io. If wait greater svctm means io requests are waiting in queue a long time and there is a PROBLEM!
 
 
-Monitor IO for Each CPU 
+## Monitor IO for Each CPU 
 ```bash
 npstat   -P all
 ```
 
 
-Java Garbage Collector Monitoring 
+## Java Garbage Collector Monitoring 
 ```bash
 jstat -gc
 ```
 
-Options
-* -gc
-* -gcutil
-* -gcnew
-* -gccapacity
+**Options**
 
-If want to monitor GC stats on actual server put following in JBoss 
-startup 
+1. -gc
+2. -gcutil
+3. -gcnew
+4. -gccapacity
 
--verbose:gc (print the GC logs) 
--Xloggc: (for more comprehensive GC logging) 
--XX:+PrintGCDetails (for more detailed output) 
--XX:+PrintTenuringDistribution (displays the tenuring thresholds assumed by the JVM)
+**If want to monitor GC stats on actual server put following in JBoss startup**
+
+* -verbose:gc (print the GC logs) 
+* -Xloggc: (for more comprehensive GC logging) 
+* -XX:+PrintGCDetails (for more detailed output) 
+* -XX:+PrintTenuringDistribution (displays the tenuring thresholds assumed by the JVM)
 
 
-Java Stack Dump of Running Process 
-
-jstack  &gt; 
+## Java Stack Dump of Running Process 
+```bash
+jstack  >; 
+```
 
 
 
