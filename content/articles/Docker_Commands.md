@@ -26,6 +26,9 @@ docker attach delaney
 # Execute a command within a running container, while outside of it
 docker exec -it delaney bash
 
+# Run Your Maven Project against sonar
+mvn clean test sonar:sonar -Dsonar.host.url=http://localhost:9000
+
 ```
 
 ## start nginx in docker container
