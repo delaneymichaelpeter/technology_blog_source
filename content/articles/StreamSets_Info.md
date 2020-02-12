@@ -76,6 +76,15 @@ grant codebase "file://${sdc.userLibs.dir}/zip-file-extract/-" {
 
 ## Build Script deployment
 
+## Maven Artifact Create Project
+Command to execute to build a new Custom Java project for Streamsets
+```bash
+# Create Maven Project
+mvn archetype:generate -DarchetypeGroupId=com.streamsets \
+-DarchetypeArtifactId=streamsets-datacollector-stage-lib-tutorial \
+-DarchetypeVersion=3.5.2 -DinteractiveMode=true
+```
+
 
 
 
