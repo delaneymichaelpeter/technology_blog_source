@@ -25,7 +25,7 @@ Need to build your maven project so it deploys to the locally running docker ima
 ```bash
 mvn clean test sonar:sonar -Dsonar.host.url=http://localhost:9000
 
-# For StreamSets need to specify sonar.scm.disabled=true because would fail.  NOT SURE WHY
-mvn clean test sonar:sonar -Dsonar.scm.disabled=true -Dsonar.host.url=http://localhost:9000
+# For StreamSets need to had to tell it the SCM provider, not sure why???? 
+mvn clean test sonar:sonar -Dsonar.scm.provider=git -Dsonar.host.url=http://localhost:9000
 ```
 
