@@ -1,6 +1,7 @@
 Title:  StreamSets Data Collector Information
 Author: Peter Delaney 
 Date: 2020-01-31 11:45
+Modified: 2020-02-27 11:45
 Tags: streamsets, sdc, dataops, apache, etl
 Slug: streamsets-datacollector-info 
 Summary: Information about Streamsets DataCollector.  EBSCO uses this   
@@ -28,8 +29,6 @@ git clone https://github.com/streamsets/datacollector-edge.git
 
 # Download actual source code
 git clone http://github.com/streamsets/datacollector
-
-
 
 ```
 
@@ -71,6 +70,29 @@ grant codebase "file://${sdc.userLibs.dir}/zip-file-extract/-" {
 
 ```
 
+## Running StreamSets in Docker container
+```bash
+# Build Container
+# -d run in backgroudn
+# --restart restart only if container exits with a non-zero exit status
+# --name name of the container
+# -p port being exposed
+docker run --restart on-failure -p 18630:18630 -d --name sdc streamsets/datacollector
+
+# Display Running Container
+docker ps
+
+# Attach via bash to running container
+docker exec -it sdc bash
+
+# To Exit out of Bash Ctr-D
+
+# Show logs from sdc
+docker logs sdc
+
+# Remove Container
+docker rm -f sdc
+```
 
 ## Remote Debugging Java Custom Processor
 

@@ -1,7 +1,9 @@
 Title:  OpenStack Related Information
 Author: Peter Delaney 
+Category: EBSCO
 Date: 2020-01-10 9:00
-Tags: openstack, devops
+Modified: 2020-02-26 7:00 
+Tags: openstack, devops, ebsco
 Slug: openstack-tech-notes 
 Summary: OpenStack Related Information  
 
