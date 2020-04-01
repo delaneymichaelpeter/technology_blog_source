@@ -70,4 +70,7 @@ docker start receiver-jenkins
 docker cp <name-of-file-on-host> <container-name>:<directory-to-copy>
 docker cp text.cfg aop:/tmp/
 
+# Load a Docker Image contained in a tar.gz file
+docker load -i <name-of-tar>.tar.gz
+
 ```
