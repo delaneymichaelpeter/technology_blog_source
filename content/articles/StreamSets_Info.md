@@ -32,6 +32,14 @@ git clone https://github.com/streamsets/datacollector-edge.git
 git clone http://github.com/streamsets/datacollector
 
 
+```
 
+## Create Custom Java maven Project
+```bash
+# Execute on command line and answer questions
+mvn archetype:generate -DarchetypeGroupId=com.streamsets -DarchetypeArtifactId=streamsets-datacollector-stage-lib-tutorial -DarchetypeVersion=2.1.0.0 -DinteractiveMode=true
+
+# Build project
+mvn clean package -DskipTests
 ```
 
