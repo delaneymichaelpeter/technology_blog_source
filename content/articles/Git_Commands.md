@@ -27,8 +27,12 @@ git pull
 # Create Branch
 git checkout -b <name-of-branch>
 
+
 # List local Branches
 git branch
+
+# Checkout an Existing branch
+git checkout <name-of-branch>
 
 # Push local branch to Remote Repository
 git push orign <name-of-branch> 

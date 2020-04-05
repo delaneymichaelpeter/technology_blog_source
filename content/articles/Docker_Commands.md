@@ -1,6 +1,6 @@
 Title: Docker Commands
 Date: 2020-01-12 10:20
-Modified: 2010-12-12 19:30
+Modified: 2020-03-22 09:30
 Tags: docker, docker-compose, devops, jenkins, sonarqube
 Slug: docker-commands
 Authors: Peter Delaney 
@@ -60,4 +60,17 @@ docker run -ti --name receiver-jenkins -p 8080:8080 -p 50000:50000 -v jenkins-da
 
 # Restart Jenkins
 docker start receiver-jenkins
+```
+
+
+## Copy files from host to Running Docker container
+```bash
+
+# Copy text.cfg file to /tmp/ directory in container
+docker cp <name-of-file-on-host> <container-name>:<directory-to-copy>
+docker cp text.cfg aop:/tmp/
+
+# Load a Docker Image contained in a tar.gz file
+docker load -i <name-of-tar>.tar.gz
+
 ```
