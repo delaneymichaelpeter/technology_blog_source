@@ -48,7 +48,8 @@ Directory to install
 ```bash
 # Execute on command line and answer questions
 mvn archetype:generate -DarchetypeGroupId=com.streamsets -DarchetypeArtifactId=streamsets-datacollector-stage-lib-tutorial -DarchetypeVersion=2.1.0.0 -DinteractiveMode=true
-=======
+```
+
 **/opt/streamsets-datacollector/user-libs/zip-file-extract/lib/zip-file-extract-1.0-SNAPSHOT.jar**
 
 Appears they want a directory like so.  Need to look into if really belongs there
@@ -73,6 +74,7 @@ grant codebase "file://${sdc.userLibs.dir}/zip-file-extract/-" {
   permission java.io.FilePermission "/tmp/RECEIVER/-",                   "read,write,execute,delete";
   permission java.lang.RuntimePermission "accessUserInformation";
 };
+```
 
 
 # Build project
