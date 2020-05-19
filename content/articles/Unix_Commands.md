@@ -7,6 +7,9 @@ Authors: Peter Delaney
 Summary: Commands that are helpful to execute
 
 
+## Github site containing a lot of Great Unix one-liners
+[Github Unix One-Liners](https://github.com/jlevy/the-art-of-command-line)  Excellent Guide on Github showing linux commands
+
 ## FIND Command 
 **Remove Certain Files in a Search/Find**
 ```bash
@@ -89,6 +92,14 @@ await should be close to svctm, means all time spent processing io. If wait grea
 ## Monitor IO for Each CPU 
 ```bash
 npstat   -P all
+```
+
+## Sorting files
+```bash
+sort a b | uniq > c       # c is a union b
+sort a b | uniq -d > c    # c is a intersect b
+sort a b b | uniq -u > c  # c is set difference a - b
+
 ```
 
 
