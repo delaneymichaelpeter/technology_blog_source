@@ -26,6 +26,19 @@ ssh -i ~/.ssh/pdelaney cloud-user@10.80.96.176   'Tikal2019!'
 su pdelaney  <ldap-password>
 
 ```
+
+### AOP VMs and userId/Password
+```bash
+
+# AOP Integration VM
+ssh -i ~/.ssh/pdelaney cloud-user@10.80.96.176  PassPhrase 'Tikal2019!'
+
+# AOP DEV VM
+ssh pdelaney@10.80.96.88  'BubJd6*L'  LDAP password
+
+# PROD DEV VM
+ssh pdelaney@10.81.98.78  'BubJd6*L'  LDAP password
+```
   
 
 ### Shared Directories Information

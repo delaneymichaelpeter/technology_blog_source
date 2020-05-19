@@ -37,4 +37,24 @@ authconfig --enableldap --enableldapauth --enablemkhomedir --ldapserver=ldap.epn
 4. Follow steps accordingly
 
 
-### Create Image from Existing Instance
+
+### Instructions to setup LDAP on EBSCO VM instance
+1. Login as root user and install the following packages. You can use yum to install these pacakges.
+2. openldap-clients
+3. nss-pam-ldapd
+4. pam_ldap
+
+```bash
+# Install Packages
+yum install -y openldap-clients nss-pam-ldapd pam_ldap
+
+# Configure LDAP
+authconfig --enableldap --enableldapauth --enablemkhomedir --ldapserver=ldap.epnet.com --ldapbasedn="dc=epnet,dc=com" --update
+
+# Add Entry to **/etc/fstab**
+prod-nas105.epnet.com:/vol/home /usr/home       nfs     defaults 0 0
+
+# Execute commands
+mkdir /usr/home
+mount /usr/home
+```
