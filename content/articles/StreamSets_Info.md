@@ -1,8 +1,8 @@
 Title:  StreamSets Data Collector Information
 Author: Peter Delaney 
-Date: 2020-01-31 11:45
+Date: 2020-04-13 07:45
 Modified: 2020-02-27 11:45
-Tags: streamsets, sdc, dataops, apache, etl
+Tags: streamsets, sdc, dataops, apache, etl, ebsco
 Slug: streamsets-datacollector-info 
 Summary: Information about Streamsets DataCollector.  EBSCO uses this   
 
@@ -106,6 +106,26 @@ mvn archetype:generate -DarchetypeGroupId=com.streamsets \
 -DarchetypeArtifactId=streamsets-datacollector-stage-lib-tutorial \
 -DarchetypeVersion=3.5.2 -DinteractiveMode=true
 ```
+
+
+
+
+## EBSCO Strategic Pipeline AWS Information
+This is how to get to Strategic Pipelines StreamSets Pipelines for viewing
+To view StreamSets strategic pipeline components in AWS:
+
+**Alex Lysenka Notes**
+
+Log into AWS via ebsco.okta.com
+1. Pick a role under eis-deliverydevqa
+2. Go to ECS service
+3. Filter the clusters list using datapipeline keyword
+4. Pick one item and click on the service name under Services tab
+5. Swich to Tasks tab and click on a running task
+6. Expand one of the  running containers and under External Link click on the one listening on port 32770
+7. Login using sdcuser / tr1ckyPA$s
+8. Pick the running flow to analyze the steps
+
 
 
 

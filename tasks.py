@@ -22,7 +22,7 @@ CONFIG = {
     # Output path. Can be absolute or relative to tasks.py. Default: 'output'
     'deploy_path': SETTINGS['OUTPUT_PATH'],
     # Port for `serve`
-    'port': 8000,
+    'port': 8001,
 }
 
 @task
@@ -49,7 +49,7 @@ def regenerate(c):
 
 @task
 def serve(c):
-    """Serve site at http://localhost:$PORT/ (default port is 8000)"""
+    """Serve site at http://localhost:$PORT/ (default port is 8001)"""
 
     class AddressReuseTCPServer(RootedHTTPServer):
         allow_reuse_address = True

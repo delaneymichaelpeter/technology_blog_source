@@ -1,51 +1,32 @@
 Title:  EBSCO AoP Notes
 Date: 2020-01-22 10:20
-Modified: 2010-02-18 19:30
+Modified: 2020-05-18 19:30
 Tags: aop, shake-n-bake
 Category: EBSCO
 Slug: Aop-Notes
 Authors: Peter Delaney 
 Summary: EBSCO Ahead of Print (AoP) Notes 
 
-## AoP Notes from Terry Meeting
-EPNLM data coming from Spring and will contain MID, ISSN, DOI, Journal Names will be coming through.
+## Create VM for AOP
 
-We will be getting ISSN.  ISSN is a standard.  MID is an EBSCO code that identifies Magazine and it is something used by EBSCO.
+## Steps to Follow to create a VM
+1. OpenStack EDC/SuperDelegates
+2. Create VM using BIC_rhel7.3Docker_b1_s1_p1 image
+3. When creating this image you will need to create a key to log into box
+3.1 ssh ~/.ssh/pdelaney cloud-user@<ip-id>   Must Enter Phassphrase  'Tikal2019!'
+4. Install LDAP on the Box: EBSCO Instructions: https://confluence.epnet.com/display/ese/Implement+LDAP+authentication+to+OpenStack+RHEL+VM%27s
+5. Config Instructions not really working:  https://confluence.epnet.com/pages/viewpage.action?spaceKey=ese&title=Fix+nobody%3Anobody+nfs4+issue+on+RHEL+machines
+6. Login
 
-
-## Information regarding the file drop of the EPNLM Data
-
-Directory Structure of ZIPS:
 ```bash
-  springer-naturejournals-springerjouraop/
-            version001/   (stop file will be here as well)
-                   rebuild/
-                   update/
-                        Date{20201221000000}   yyyyMMddtime
-                            meta/
-                                (job).zip
+# Log into box
+ssh -i ~/.ssh/pdelaney cloud-user@10.80.96.176   'Tikal2019!'
+
+# Sudo 
+su pdelaney  <ldap-password>
+
 ```
-
-### Contents of the ZIP File
-```bash
-epnlm_xml (folder)
-      Job(folder)
-        publishing set (folder)
-           meta (folder)
-             .xml  (EPNLM. max 1000 records)
-             .xml (EPNLM. max 1000 records)
-             .xml (EPNLM. max 1000 records)
-```
-
-Directory Structure of Error XML
-```bash
-   springerjournal/    (product name)
-                   01-23-2020/  (day)
-                             23:24:14/ (time)
-                                      <an-name>.xml  (article xml file)
-```    
-
-
+  
 
 ### Shared Directories Information
 
