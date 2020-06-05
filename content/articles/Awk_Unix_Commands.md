@@ -20,6 +20,13 @@ cat /logs/sdc.log | grep "AOPErrorService " | awk '{out=$2; for(i=7;i<NF;i++){ou
 
 ```
 
+## Command to find the Largest Number
+```bash
+# List of files find file that is the largest in size
+ls -l | awk '$5>m {m=$5;file=$NF} END{print "Max number: "m " File="file}'
+
+```
+
 
 
 
