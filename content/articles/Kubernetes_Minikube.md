@@ -58,10 +58,47 @@ sudo kubectl create deployment --image nginx my-nginx
 sudo kubectl expose deployment my-nginx --port=80 --type=NodePort  # Expose a Port on your nginx cluster
 
 sudo kubectl get svc   # Should see your NodePort Service running on Port 80
-sudo minikube ip       # 
+sudo minikube ip       # Getting IP of the MiniKube Nodes
 
+```
 
+## List of MiniKube commands and what they do
+```bash
+# Shows all of the minikube commands
+sudo minikube --help
+sudo minikube start --help
 
+# Start minikube
+minikube start
+sudo minikube start; # Need sudo if running on VM
+minikube start -p <cluster-name>
+
+# List of cached images
+minikube cache list
+ls -l ~/.minikube/cache/images  # this is where images are stored
+
+sudo minikube cache add nginx:latest  # Download nginx image
+sudo minikube cache list        # Should see nginx:latest in list
+ls -l ~/.minikube/cache/images  # Should see nginx:latest in list
+
+# Start nginx that is in cache
+sudo kubectl create deployment --image nginx:latest my-nginx
+kubectl get pods   # Shows pods running
+
+# Show Services
+sudo minikube service list
+kubectl get svc    # Same command but with kubernetes does not show all Services
+kubectl get svc -A # Show --all-namespaces
+
+# Stop and Delete minikube cluster
+sudo minikube stop
+sudo minikube delete
+
+# Trouble shooting commands
+sudo minikube id      # Cluster IP
+sudo minikube logs    # Logs when starting up
+sudo minikube version # version your using
+sudo minikube update-check # Shows your verison of minikube and the latest available
 
 
 
