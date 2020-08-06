@@ -27,6 +27,18 @@ su pdelaney  <ldap-password>
 
 ```
 
+**Connect to MFSi Server via Putty**
+```bash
+# User to enter in putty
+cloud-user
+
+# How to stop and start tomcat server
+ps -elf | grep tomcat   # Make sure tomcat is running
+stopTomcat  # Stops the Server
+startTomcat # Start the Server
+
+```
+
 ### AOP VMs and userId/Password
 ```bash
 
