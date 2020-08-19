@@ -25,7 +25,7 @@ groups
 # Add my User (cloud_user) to the docker group so can run docker without sudo
 sudo usermod -aG docker cloud_user
 
-# Logout then log back in Execute groups again to see if part of the group
+# NOTE: Log Off of Machine then log back in Execute groups again to see if part of the group
 groups
 
 # See if docker can run without sudo
@@ -36,13 +36,15 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_1.4.0.
 sudo dpkg -i minikube_1.4.0.deb
 
 
-# Configure and Start MiniKube (If running this on a virtual machine need to set vm-driver to 'none' because cannot virtualize on a virtual machine)
+# Configure and Start MiniKube
+# (If running this on a virtual machine need to set vm-driver to 'none' because cannot virtualize on a virtual machine)
 sudo minikube config set vm-driver none
 sudo minikube start
 
 # Setup Configuration for kubectl (command from output of 'sudo minikube start' above)
 # Changes the permission of ~/.kube/ and ~/.minikube/ directory to cloud_user
-sudo chown -R $USER $HOME/.kube $HOME/.minikube
+sudo chown -R $USER $HOME/.kube
+sudo chown -R $USER $HOME/.minikube
 
 # Install kubectl command
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl

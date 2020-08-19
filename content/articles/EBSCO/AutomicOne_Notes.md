@@ -15,7 +15,9 @@ Summary: EBSCO AtomicOne Information
 ## ClientIds Created By Sam
 * Need to specify the clientId (6125 is the one I've been using)
 * Need to specify the clientId (6555 another one Sam created)
+* Need to specify the clientId (6330 for JDXREF_FLOW)
 * Need to specify the clientId (1615 one in PROD Sam created)
+
 
 ### URL to AtomicOne
 
