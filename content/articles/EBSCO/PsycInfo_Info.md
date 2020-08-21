@@ -8,9 +8,10 @@ Authors: Peter Delaney
 Summary: EBSCO PsycInfo Information
 
 ## Cited Reference Bug Notes
-Worked this EBSCO bug where Cited Reference was a problem.  This was one of those AutomicOne workflow jobs that called a C# executable
-that eventually inserted data into a database.
-
+>
+>Worked this EBSCO bug where Cited Reference was a problem.  This was one of those AutomicOne workflow jobs that called a C# executable
+>that eventually inserted data into a database.
+>
 
 ## Source Code PsycInfo
 ```bash
