@@ -8,7 +8,7 @@ Authors: Peter Delaney
 Summary: EBSCO AtomicOne Information
 
 ## AutomicOne Notes
- * (DEV) __http://dev.oneautomation.epnet.com:8080/awi/__
+ * (DEV) __http://dev.oneautomation.epnet.com:8080/awi/   (SVC_DEVAW / Ju$t4d&v )
  * (QA)
  * (PROD)
 
