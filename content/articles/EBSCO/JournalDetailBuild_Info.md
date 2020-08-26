@@ -32,22 +32,40 @@ svn co  http://ddd.svn.epnet.com/repo/ApplicationsRelease/JournalDetailBuilder/
 
 ```
 
+## JournalDetailBuilder SVN URLS
+1. [Source Code](http://ddd.svn.epnet.com/repo/Applications/JournalDetailBuilder/trunk/)
+1. [Executable Application](http://ddd.svn.epnet.com/repo/ApplicationsRelease/JournalDetailBuilder/)
+1. [Application Installer](http://ae-dev.svn.epnet.com/repo/ApplicationInstallers/JournalDetailBuilder/trunk/)
+1. [ANOTHER Application Installer](http://ddd.svn.epnet.com/repo/ApplicationInstallers/)  (DON'T KNOW WHY DIFFERENT)
+1. [SVN BuildComponents](http://ae-dev.svn.epnet.com/repo/BuildComponents/)  (Believe where installers are checked in)
+
+## Jenkins Server URLS
+1. [Jenkins URL](http://ddd-x64-build1:8080/view/)
+1. [JournalDetailBuilder Jenkins Build](http://ddd-x64-build1:8080/job/rel-app-JournalDetailBuilder/)
+1. [Jenkins NSI Build Server](http://ddd-build2:8080/view/nsi-dev/)    (NOT SURE WHAT THIS IS OR DOES)
+
+## Automic One URLs
+1. [Automic DEV](http://dev.oneautomation.epnet.com:8080/awi/)   (SVC_DEVAW / Ju$t4d&v )
+
+
+## Video URLS
+1. [Dennis Heretz Video](https://web.microsoftstream.com/video/ba3a3522-084b-44ab-b35e-4dd0ee7c6dfe)
+1. [Dennis Heretz Video II](https://web.microsoftstream.com/video/3a041be8-fbe1-4bdf-a96c-1f28f4ef1274)
+1. [Danis BEST ONE](https://web.microsoftstream.com/video/d6279202-7187-41a3-979e-048f2d344d29)
+1. [Danis Deploy App](https://web.microsoftstream.com/video/8fdee282-ac62-49f5-b1b2-c32eb6f624a4)  (Installer and Deploying 3/4 way down video)
+
+
+## Confluence Documentation URLS
+1. [JournalDetailBuilder Documentation](https://confluence.epnet.com/pages/viewpage.action?spaceKey=ART&title=AoP+CB%3A+SPIKE%3A+To+learn+JDB+and+its+role+on+the+build+and+the+CB+changes)
+1. [JournalDetailBuilder User Guide](https://confluence.epnet.com/pages/viewpage.action?spaceKey=ese&title=Journal+Detail+Builder+User+Guide)
+1. [AppWorx Automated Release Process](https://confluence.epnet.com/pages/viewpage.action?spaceKey=ese&title=Automation+Engine+%28AppWx+V9%29+Automated+Release+Process)
+1. [JDB Process](https://confluence.epnet.com/display/ese/Generic+interface+that+will+allow+JDB+to+process+content+from+MFS%2C+serfiles%2C+or+other+journal+XML+files)
+1. [Packaging and Deployment Automic Jobs](https://confluence.epnet.com/display/DP/Packaging+and+Deployment)
+1. [SVN Archive Documentation](https://confluence.epnet.com/pages/viewpage.action?spaceKey=ddp&title=SVN+Archive+Documentation%3A+Development)
+
 ## Usefull URLs
 
-1. (Automic DEV) http://dev.oneautomation.epnet.com:8080/awi/   (SVC_DEVAW / Ju$t4d&v )
-1. [JournalDetailBuilder Documentation](https://confluence.epnet.com/pages/viewpage.action?spaceKey=ART&title=AoP+CB%3A+SPIKE%3A+To+learn+JDB+and+its+role+on+the+build+and+the+CB+changes)
-2. [JournalDetailBuilder User Guide](https://confluence.epnet.com/pages/viewpage.action?spaceKey=ese&title=Journal+Detail+Builder+User+Guide)
-2. [AppWorx Automated Release Process](https://confluence.epnet.com/pages/viewpage.action?spaceKey=ese&title=Automation+Engine+%28AppWx+V9%29+Automated+Release+Process)
-3. [JDB Process](https://confluence.epnet.com/display/ese/Generic+interface+that+will+allow+JDB+to+process+content+from+MFS%2C+serfiles%2C+or+other+journal+XML+files)
-4. [JournalDetailBuilder Jenkins Build](http://ddd-x64-build1:8080/job/rel-app-JournalDetailBuilder/)
-4. [JournalDetailBuilder Application Installer SVN](http://ae-dev.svn.epnet.com/repo/ApplicationInstallers/JournalDetailBuilder/trunk/)
-4. [Packaging and Deployment Automic Jobs](https://confluence.epnet.com/display/DP/Packaging+and+Deployment)
-4. [AutomicOne URL](http://dev.oneautomation.epnet.com:8080/awi)
-4. [Dennis Heretz Video](https://web.microsoftstream.com/video/ba3a3522-084b-44ab-b35e-4dd0ee7c6dfe)
-4. [Dennis Heretz Video II](https://web.microsoftstream.com/video/3a041be8-fbe1-4bdf-a96c-1f28f4ef1274)
-4. [Danis Video III BEST ONE](https://web.microsoftstream.com/video/d6279202-7187-41a3-979e-048f2d344d29)
-4. [Danis Video IV Deploy](https://web.microsoftstream.com/video/8fdee282-ac62-49f5-b1b2-c32eb6f624a4)
-4. [SVN Archive Documentation](https://confluence.epnet.com/pages/viewpage.action?spaceKey=ddp&title=SVN+Archive+Documentation%3A+Development)
+
 
 
 ## Deployment Steps ##
@@ -58,6 +76,15 @@ svn co  http://ddd.svn.epnet.com/repo/ApplicationsRelease/JournalDetailBuilder/
 1. Check Your code and README into SVN, they check it into the trunk/ no branching, not sure why
 1. Need to install on windows (ant, svn, JavaSVN)
 1. cd trunk; ant -f BuildScripts\BranchTagRelease.xml tag-trunk
+
+1. Make Source code changes
+1. Build and check into SVN
+1. Run Jenkins Application Dev
+1. Run Jenkins Application Release
+1. SVN Checkout Application Installer
+1. Change Installer to have latest Executable
+1. Check changes into SVN
+1. 
 
 ## DataBase Information
 1. hostname: oraqa101.epnet.com
