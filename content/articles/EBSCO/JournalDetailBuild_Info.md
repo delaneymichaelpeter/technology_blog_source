@@ -1,6 +1,6 @@
 Title:  EBSCO Journal Detail Builder (JDB) Information
 Date: 2020-08-19 10:20
-Modified: 2020-08-18 19:30
+Modified: 2020-08-27 19:30
 Tags: automic-one, shake-n-bake, jdb, journaldetailbuilder
 Category: EBSCO
 Slug: JournalDetailBuilder
@@ -39,7 +39,7 @@ svn co  http://ddd.svn.epnet.com/repo/ApplicationsRelease/JournalDetailBuilder/
 1. [ANOTHER Application Installer](http://ddd.svn.epnet.com/repo/ApplicationInstallers/)  (DON'T KNOW WHY DIFFERENT)
 1. [SVN BuildComponents](http://ae-dev.svn.epnet.com/repo/BuildComponents/)  (Believe where installers are checked in)
 
-## Jenkins Server URLS
+## Jenkins Server URLs
 1. [Jenkins URL](http://ddd-x64-build1:8080/view/)
 1. [JournalDetailBuilder Jenkins Build](http://ddd-x64-build1:8080/job/rel-app-JournalDetailBuilder/)
 1. [Jenkins NSI Build Server](http://ddd-build2:8080/view/nsi-dev/)    (NOT SURE WHAT THIS IS OR DOES)
@@ -48,14 +48,14 @@ svn co  http://ddd.svn.epnet.com/repo/ApplicationsRelease/JournalDetailBuilder/
 1. [Automic DEV](http://dev.oneautomation.epnet.com:8080/awi/)   (SVC_DEVAW / Ju$t4d&v )
 
 
-## Video URLS
+## JDB Training Video URLs
 1. [Dennis Heretz Video](https://web.microsoftstream.com/video/ba3a3522-084b-44ab-b35e-4dd0ee7c6dfe)
 1. [Dennis Heretz Video II](https://web.microsoftstream.com/video/3a041be8-fbe1-4bdf-a96c-1f28f4ef1274)
-1. [Danis BEST ONE](https://web.microsoftstream.com/video/d6279202-7187-41a3-979e-048f2d344d29)
-1. [Danis Deploy App](https://web.microsoftstream.com/video/8fdee282-ac62-49f5-b1b2-c32eb6f624a4)  (Installer and Deploying 3/4 way down video)
+1. [Danis JDB Build](https://web.microsoftstream.com/video/d6279202-7187-41a3-979e-048f2d344d29)
+1. [Deploy JDB via Jenkins](https://web.microsoftstream.com/video/8fdee282-ac62-49f5-b1b2-c32eb6f624a4)  (Installer and Deploying 3/4 way down video)
+1. [Susan Automic Workflow Creation](https://web.microsoftstream.com/video/e320d55f-b846-4171-bea1-40720a0623d8)
 
-
-## Confluence Documentation URLS
+## Confluence Documentation URLs
 1. [JournalDetailBuilder Documentation](https://confluence.epnet.com/pages/viewpage.action?spaceKey=ART&title=AoP+CB%3A+SPIKE%3A+To+learn+JDB+and+its+role+on+the+build+and+the+CB+changes)
 1. [JournalDetailBuilder User Guide](https://confluence.epnet.com/pages/viewpage.action?spaceKey=ese&title=Journal+Detail+Builder+User+Guide)
 1. [AppWorx Automated Release Process](https://confluence.epnet.com/pages/viewpage.action?spaceKey=ese&title=Automation+Engine+%28AppWx+V9%29+Automated+Release+Process)
@@ -64,6 +64,13 @@ svn co  http://ddd.svn.epnet.com/repo/ApplicationsRelease/JournalDetailBuilder/
 1. [SVN Archive Documentation](https://confluence.epnet.com/pages/viewpage.action?spaceKey=ddp&title=SVN+Archive+Documentation%3A+Development)
 
 ## Usefull URLs
+
+
+## The Fix
+This is information on what I fixed
+> Basically changed the JournalCitationRule.cs file to exclude the 213, 215, 216 tags if the Embargo was not in play.  Meaning if Embargo no longer valid or if Full Text Continuation False
+> 213 = Embargo in Months, 215 = Embargo Days or Months, 216 = Embargo either Day or Month
+> 214 = T/F for Embargo and will always be true now.  Dennis Heretz wants me to remove this.
 
 
 
