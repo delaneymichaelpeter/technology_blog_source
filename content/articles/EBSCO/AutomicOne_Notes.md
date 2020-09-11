@@ -35,6 +35,22 @@ Summary: EBSCO AtomicOne Information
 takes the contents of the tsv file and updates the ContentServer database which is an sqlserver database with the updated values.
 A log file is also produced with the stats of what was updated.
 
+## AutomicOne URLs
+1. [DDSConsole URL](http://edc-v-ddsconsld01:4200/login)
+1. [My EBSCO Host Diagram](https://go.gliffy.com/go/html5/13353820)
+1. [My EBSCO Host Diagram](https://confluence.epnet.com/display/~pdelaney/DDS+Diagram)
+
+
+## AutomicOne Training Video URLs
+1. [Danis Build JournalDetailBuilder](https://web.microsoftstream.com/video/d6279202-7187-41a3-979e-048f2d344d29)
+1. [Deploy Workflow via Jenkins](https://web.microsoftstream.com/video/8fdee282-ac62-49f5-b1b2-c32eb6f624a4)  (Installer and Deploying 3/4 way down video)
+1. [Susan Automic Workflow Creation](https://web.microsoftstream.com/video/e320d55f-b846-4171-bea1-40720a0623d8)
+1. [Susan Automic Create Users](https://web.microsoftstream.com/video/fcca5ae5-a3d1-452b-b8a6-c88c49799938)
+1. [Susan Create Users](https://web.microsoftstream.com/video/df51c8d9-39ee-468f-959b-a35152807d29)
+1. [Susan DDSConsole Introduction](https://web.microsoftstream.com/video/5c785b9a-df93-4d42-9920-2fb553e459c8)  (IP= edc-v-ddsconsld01)
+1. [Susan EBSCO Admin](https://web.microsoftstream.com/video/b596de48-8a7f-4558-82e8-97b58471d8bf)
+
+
 Below is an example control file that is created during Flow runtime
 ```bash
 ; CINAHL control file For posting pdf Files

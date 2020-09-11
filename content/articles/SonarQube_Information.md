@@ -1,6 +1,6 @@
 Title: SonarQube Information
 Date: 2020-01-12 10:20
-Modified: 2010-12-12 19:30
+Modified: 2020-09-11 19:30
 Tags: docker, sonarqube
 Slug: sonarqube-information
 Authors: Peter Delaney 
@@ -27,5 +27,15 @@ mvn clean test sonar:sonar -Dsonar.host.url=http://localhost:9000
 
 # For StreamSets need to had to tell it the SCM provider, not sure why???? 
 mvn clean test sonar:sonar -Dsonar.scm.provider=git -Dsonar.host.url=http://localhost:9000
+
+# Streamsets via Gradle
+./gradlew -Dsonar.host.url=http://localhost:9000 -Dsonar.scm.provider=git sonarqube
 ```
 
+
+## EBSCO SonarQube URL
+>
+> URLs to SonarQube
+>
+
+1. **SonarQube URL in Cloud**         [URL](http://sonarqube.eis-platformlive.cloud:9000/)

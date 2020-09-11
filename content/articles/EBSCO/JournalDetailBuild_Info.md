@@ -33,6 +33,9 @@ svn co  http://ddd.svn.epnet.com/repo/ApplicationsRelease/JournalDetailBuilder/
 ```
 
 ## JournalDetailBuilder SVN URLS
+1. [Rally DE43283 Bug](https://rally1.rallydev.com/#/56048990077/dashboard?detail=%2Fdefect%2F354272135500)
+1. [EBSCO eHost UI Bug](https://web.a.ebscohost.com/ehost/command/detail?vid=0&sid=30836470-31c6-415f-9ff9-e3c6ad3a4bfc%40sdc-v-sessmgr03&bdata=JnNpdGU9ZWhvc3QtbGl2ZQ%3d%3d#jid=7M1&db=plh)
+1. [URL To eHost DEV With Probem](http://devaw-epweb101.epnet.com/ehost/command/detail?vid=6&sid=f8c3cf52-6d67-4a65-989e-ab1b0b652d3f%40redis&bdata=JnNpdGU9ZWhvc3QtbGl2ZQ%3d%3d#jid=KI7R&db=egs)
 1. [Source Code](http://ddd.svn.epnet.com/repo/Applications/JournalDetailBuilder/trunk/)
 1. [Executable Application](http://ddd.svn.epnet.com/repo/ApplicationsRelease/JournalDetailBuilder/)
 1. [Application Installer](http://ae-dev.svn.epnet.com/repo/ApplicationInstallers/JournalDetailBuilder/trunk/)
@@ -42,10 +45,11 @@ svn co  http://ddd.svn.epnet.com/repo/ApplicationsRelease/JournalDetailBuilder/
 ## Jenkins Server URLs
 1. [Jenkins URL](http://ddd-x64-build1:8080/view/)
 1. [JournalDetailBuilder Jenkins Build](http://ddd-x64-build1:8080/job/rel-app-JournalDetailBuilder/)
-1. [Jenkins NSI Build Server](http://ddd-build2:8080/view/nsi-dev/)    (NOT SURE WHAT THIS IS OR DOES)
+1. [Jenkins NSI Build Server](http://ddd-build2:8080/view/nsi-dev/)    (Believe people refer this to the Installer)
 
 ## Automic One URLs
-1. [Automic DEV](http://dev.oneautomation.epnet.com:8080/awi/)   (SVC_DEVAW / Ju$t4d&v )
+1. [Automic DEV](http://dev.oneautomation.epnet.com:8080/awi/)   (SVC_DEVAW / Ju$t4d&v ) OR Windows ID
+
 
 
 ## JDB Training Video URLs
@@ -54,6 +58,11 @@ svn co  http://ddd.svn.epnet.com/repo/ApplicationsRelease/JournalDetailBuilder/
 1. [Danis JDB Build](https://web.microsoftstream.com/video/d6279202-7187-41a3-979e-048f2d344d29)
 1. [Deploy JDB via Jenkins](https://web.microsoftstream.com/video/8fdee282-ac62-49f5-b1b2-c32eb6f624a4)  (Installer and Deploying 3/4 way down video)
 1. [Susan Automic Workflow Creation](https://web.microsoftstream.com/video/e320d55f-b846-4171-bea1-40720a0623d8)
+1. [Susan Automic Workflow Copy](https://web.microsoftstream.com/video/fcca5ae5-a3d1-452b-b8a6-c88c49799938)
+1. [Susan Create Users](https://web.microsoftstream.com/video/df51c8d9-39ee-468f-959b-a35152807d29)
+1. [Susan DDSConsole Introduction](https://web.microsoftstream.com/video/5c785b9a-df93-4d42-9920-2fb553e459c8)  (IP= edc-v-ddsconsld01)
+1. [Susan EBSCO Admin](https://web.microsoftstream.com/video/b596de48-8a7f-4558-82e8-97b58471d8bf)
+
 
 ## Confluence Documentation URLs
 1. [JournalDetailBuilder Documentation](https://confluence.epnet.com/pages/viewpage.action?spaceKey=ART&title=AoP+CB%3A+SPIKE%3A+To+learn+JDB+and+its+role+on+the+build+and+the+CB+changes)
@@ -64,7 +73,9 @@ svn co  http://ddd.svn.epnet.com/repo/ApplicationsRelease/JournalDetailBuilder/
 1. [SVN Archive Documentation](https://confluence.epnet.com/pages/viewpage.action?spaceKey=ddp&title=SVN+Archive+Documentation%3A+Development)
 
 ## Usefull URLs
-
+1. [DDSConsole Login](http://edc-v-ddsconsld01:4200/login)
+1. [My EBSCO Host Diagram](https://go.gliffy.com/go/html5/13353820)
+1. [My EBSCO Host Diagram](https://confluence.epnet.com/display/~pdelaney/DDS+Diagram)
 
 ## The Fix
 This is information on what I fixed
