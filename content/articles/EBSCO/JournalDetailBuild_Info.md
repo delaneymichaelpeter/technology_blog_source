@@ -102,7 +102,13 @@ This is information on what I fixed
 1. SVN Checkout Application Installer
 1. Change Installer to have latest Executable
 1. Check changes into SVN
-1. 
+1.
+
+# Folks Involved in the Deployment of the Installer to PROD
+1. **RFC Document** [URL](https://ebscoind.sharepoint.com/sites/GrandCentral/Lists/RequestforChange/DispForm.aspx?ID=615&originalPath=aHR0cHM6Ly9lYnNjb2luZC5zaGFyZXBvaW50LmNvbS86bGk6L3MvR3JhbmRDZW50cmFsL0V3YmVOVkxiRll0RWlIUXNTcThrYnRvQi1SYzhSRWxtNnJEeG54T00yVzc1N0E_cnRpbWU9dXlPS18wWmEyRWc)
+1. Joe Calderon
+1. Matt Colbern
+1. Bill Spears
 
 ## DataBase Information
 1. hostname: oraqa101.epnet.com
