@@ -14,11 +14,12 @@ Summary: EBSCO Server Machines List
 
 
 # Server List
-|   Env   |     IP     | UserId                                 |   Password  |
-|--------:|:----------:|:--------------------------------------:|:-----------:|
-|**DEV**  |10.80.96.88 | pdelaney                               |LDAP Password|
-|**Int**  |10.80.96.176| ssh -i ~/.ssh/pdelaney cloud-user@<ip> |Tikal2019!   |
-|**PROD** |10.81.98.78 | pdelaney                               |LDAP Password|
+|   Env      |     IP     | UserId                                 |   Password  |
+|-----------:|:----------:|:--------------------------------------:|:-----------:|
+|**DEV**     |10.80.96.88 | pdelaney                               |LDAP Password|
+|**Int**     |10.80.96.176| ssh -i ~/.ssh/pdelaney cloud-user@<ip> |Tikal2019!   |
+|**PROD**    |10.81.98.78 | pdelaney                               |LDAP Password|
+|**SLS DEV** |10.81.97.58 | root                                   |Ebsco!!!|
 
 
 # AOP Integration VM
