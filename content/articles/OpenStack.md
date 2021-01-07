@@ -2,7 +2,7 @@ Title:  OpenStack Related Information
 Author: Peter Delaney 
 Category: EBSCO
 Date: 2020-01-10 9:00
-Modified: 2020-05-18 11:00 
+Modified: 2020-11-18 11:00 
 Tags: openstack, devops, ebsco
 Slug: openstack-tech-notes 
 Summary: OpenStack Related Information  
@@ -15,6 +15,42 @@ Summary: OpenStack Related Information
 2. https://ecloud.ebsco.com  **(slsuser/Klugt44d)**
 
 ---
+
+### Steps to Create VM with keypair
+
+## Create key to log into server
+```bash
+ssh-keygen -t rsa <name-of-key>
+ssh-keygen -t rsa slskey
+
+# Don't need to enter passphrase; this will create public and private key
+slskey     # Private
+slskey.pub # Public
+
+# Import the public key into OpenStack
+
+# Create new VM and use this slskey as the key name
+Image:  BIC-CentOS7-2020-08-20
+Flavor: centos.c1.large
+Key cloud: pdelaney
+
+# Logging onto the machine
+ssh ~i ./slskey cloud-user@<ip-number>   # Using the Private Key to login
+
+# Update OS
+su
+yum update -y
+
+# Follow Franklin Instructions on how to update python & OpenStack cli
+
+```
+
+** Links To Virtual Team Instructions **
+
+1. [Instructions to Install OpenStack CLI from Genevieve Gagne](https://confluence.epnet.com/pages/viewpage.action?pageId=351110177)
+2. [Script to Change Environments from Franklin Henriquez](https://github.com/EBSCOIS/iso.virtualization.ebsco_public/blob/develop/openstack_scripts/ebscouser_p9)
+3. [Instructions to Install OpenStack CLI from Franklin Henriquez](https://docs.platform9.com/openstack/cli-access/install-cli-centos/)
+
 
 ### Log into VM and configure LDAP
 ```bash

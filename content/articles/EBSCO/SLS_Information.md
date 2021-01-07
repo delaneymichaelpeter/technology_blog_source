@@ -40,3 +40,37 @@ Summary: EBSCO SLS Pipeline Information
 1. **Active Jobs DEV** http://edc-v-slspro02i04.epnet.com:8080/dpl/loaderService/activeReport [URL](http://edc-v-slspro02i04.epnet.com:8080/dpl/admin/stopJob)
 1. **Update Jobs DEV** http://edc-v-slspro02i04.epnet.com:8080/dpl/admin/updateJob [URL](http://edc-v-slspro02i04.epnet.com:8080/dpl/admin/updateJob)
 1. **Stop   Jobs DEV** http://edc-v-slspro02i04.epnet.com:8080/dpl/admin/stopJob [URL](http://edc-v-slspro02i04.epnet.com:8080/dpl/admin/stopJob)
+
+## Active MQ Info
+ActiveMQ is also build as a systemd service
+'''bash
+> systemctl status activemq
+'''
+
+DEV  Machine: 
+LINT Machine:  edc-v-slsamqi04.epnet.com
+
+**FullText Server Profile**
+
+'''bash
+# Don't run using forever start app.js
+nohup node --prof /usr/shared/eBSE/current/app.js
+
+
+# After Running job will produce profiles
+# Execute to read the
+node --prof-process isolate-x...... | less
+
+
+# Another Tool
+npm install node-tick-processor -g
+
+node-tick-processor isolat-x...
+
+
+'''
+
+**URL To node tick profiler**
+https://github.com/sidorares/node-tick
+
+

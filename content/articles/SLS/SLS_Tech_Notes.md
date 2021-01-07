@@ -126,11 +126,19 @@ SSH To Server:  ssh root@10.80.97.81    password=Ebsco!!!
 
 ### **Establish xslt4node link**
 ```bash
-cd current/node_modules
-rm -rf xslt4node/
-# This works on PROD
-npm link xslt4node 
-# This one had to do in LINT
+
+# cd to working directory
+cd /usr/share/eBse/current
+cd node_modules
+unlink xslt4node
+
+# Recreate models in following directory
+cd /opt/rh/rh-nodejs4/root/usr/lib/node_modules/xslt4node
+rm -rf node_modules
+npm install
+
+# Link to the xslt
+cd /usr/share/eBse/current/node_modules
 ln -s /opt/rh/rh-nodejs4/root/usr/lib/node_modules/xslt4node xslt4node
 
 # Establish new link to new directory
@@ -138,8 +146,9 @@ ln -sfnv FTSrvc2.X.X/ current
 
 # Start server
 Now Start the Server
-cd current/
+cd /usr/share/eBse/current
 forever start app.js
+
 ```
 
 # Check Log files in /root/.forever

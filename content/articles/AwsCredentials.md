@@ -1,6 +1,6 @@
 Title: AWS Configuration Notes 
 Date: 2020-01-07 10:20
-Modified: 2010-12-05 19:30
+Modified: 2020-12-14 19:30
 Tags: aws, cli
 Slug: my-super-post
 Authors: Peter Delaney 
@@ -149,6 +149,67 @@ eyJwYXlsb2FkIjoiY1U0SXZyQUsvcnNGTDBneldHR0xrbSs4dG1lMzRXUUNMSm5rZGY0UnRCY2pUc005
 # Execute 
 
 ```
+
+
+# AWS Kubectl Connect to AWS Server
+Instructions getting ability to connect to AWS resources
+
+```bash
+gimme-aws-creds --profile eis-deliverydevqa
+
+# Get list of running Kubernetes Clusters
+aws --profile eis-deliverydevqa eks list-clusters
+
+# Update your local kubectl configuration for the cluster picked from list
+aws --profile eis-deliverydevqa eks update-kubeconfig --name csp-devqa
+
+
+# Shows pods running in AWS for --profile
+# normalization-*,  enrichment-* and canonical-* nodes are StreamSets nodes
+kubectl get pods -n main
+
+# Port Forward from local to running container in Kubernetes
+kubectl port-forward <sdc-node-from-list> 18630:18630 -n main  # 18630 is SDC port
+
+# Open browser
+localhost:18630 #  userId/pass  sdcuser/tr1ckyPA$s
+
+```
+
+# Connect to AWS Resource running in MKS
+
+```bash
+# Get credentials first
+gimme-aws-creds --profile eis-deliverydevqa
+
+# List Kafka Clusters to select on one interested
+aws --profile eis-deliverydevqa kafka list-clusters
+
+# Describe your cluster
+aws --profile eis-deliverydevqa kafka describe-cluster --cluster-arn "<arn-from-list>"
+
+# Get List of Brokers
+aws --profile eis-deliverydevqa kafka get-bootstrap-brokers --region us-east-1 --cluster-arn '<arn-from-list>'
+
+# Get List of Kafka Broker Nodes
+aws --profile eis-deliverydevqa kafka list-nodes --cluster-arn '<arn-from-list>'
+
+# Get Kafka zookeeper server list
+aws --profile eis-deliverydevqa kafka describe-cluster --cluster-arn "<arn-from-list>"  | grep ZookeeperConnectionString
+
+# Get bootstrap server list 
+aws --profile eis-deliverydevqa kafka get-bootstrap-brokers --region us-east-1 --cluster-arn '<arn-from-list>'
+
+# List Topic in AWS MKS Cluster
+kafka-topics.sh --bootstrap-server <broker-list-from-above> --list
+
+# Read from topic
+kafka-console-consumer.sh --bootstrap-server <broker-list-from-above> --topic shipper-messaging-topic --from-beginning
+
+
+```
+
+[AWS Instructions to Connect]: https://aws.amazon.com/premiumsupport/knowledge-center/eks-cluster-connection/
 
 <!-- Links -->
 [kubernetes-cluster-connect]: ./kubernetes.md#using-aws-cli-to-manage-your-kubernetes-configuration
