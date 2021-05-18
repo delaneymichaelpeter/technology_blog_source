@@ -1,11 +1,17 @@
 Title:  EBSCO AoP Notes
 Date: 2020-01-22 10:20
-Modified: 2020-05-18 19:30
+Modified: 2021-01-15 19:30
 Tags: aop, shake-n-bake
 Category: EBSCO
 Slug: Aop-Notes
 Authors: Peter Delaney 
 Summary: EBSCO Ahead of Print (AoP) Notes 
+
+## Execute aop unit tests
+```
+cd <aop-directory>
+gradlew clean integrationTest -DenvId=local --info
+
 
 ## Create VM for AOP
 

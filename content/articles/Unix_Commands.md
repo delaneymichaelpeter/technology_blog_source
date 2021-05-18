@@ -25,6 +25,11 @@ find . -name '*.jar' -exec bash -c "echo {} && jar tvf {} | grep Name_Searching_
 netstat -tulpn | grep <port>
 ```
 
+**Find files who size is greater than
+```bash
+find . -type f -size +1G
+```
+
 
 ## Checking open files 
 
