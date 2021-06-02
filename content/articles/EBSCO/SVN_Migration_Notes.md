@@ -11,7 +11,7 @@ Purpose of this document so we can support any SVN repository issues that may ar
 
 
 ## Three Use Cases SVN Scripts
-1. SVN Server goes Down; (Need to create New Instances and Configure Jenkins)
+1. SVN Server goes Down; (Need to create New Instances, restore SVN artifacts and swap DNS IPs for Jenkins Servers)
 2. Network Share goes Down; (May require us to restore some SVN repositories)
 3. Daily cronjob backups broken; (May need to fix the cronjob)
 
@@ -19,13 +19,15 @@ Purpose of this document so we can support any SVN repository issues that may ar
  
 ## UseCase: (SVN Server Goes Down Steps)
 
+Need to Provision a new P9 Instance on Region/Tenant PDC/VersionControl in this [URL](https://ecloud.ebsco.com/clarity/index.html#/signin)   id : **versioncontrol/VhEyBXk7-yjLLUUF**
+
 ### Create new P9 Instance from Snapshot
 1. Go to P9 and login https://ecloud.ebsco.com/clarity/index.html#/signin.   Credentials: **versioncontrol/VhEyBXk7-yjLLUUF**
 2. Select "Openstack" in left menu
 3. Select Region: **PDC** in upper right corner.
 4. Select "Instances" below **Openstack**
 5. Press "+ Instance"
-6. Select image **svn-replatforming-3**
+6. Select image **svn-replatforming-4**
 7. Press "Next"
 8. Select availability zone **HA**
 9. Select instance type/flavor **centos.s1.large**
@@ -33,13 +35,13 @@ Purpose of this document so we can support any SVN repository issues that may ar
 11. Select network **external**
 12. Press "Next"
 13. Fill-in the following fields:
-14. Instance Name **svn-replatforming-3** (any unique name)
+14. Instance Name **svn-replatforming-4** (any unique name)
 15. SSH Key **svn-replatforming**. We used ssh-keygen -t rsa to generate keys. Below you can find these private and public keys attached to this article.
 16. Security Groups "default"
 17. Press "Finish"
 18. Press "Create instance
 
-All scripts and network mounts should be already established from the **svn-replatforming-3** image
+All scripts and network mounts should be already established from the **svn-replatforming-4** image
 
 Remote Shell into machine
 ```bash
@@ -47,7 +49,7 @@ ssh -i ~/.ssh/svn-migration_rsa cloud-user@HOST-IP
 ```
 
 ###  DNS Names to IP Addresses
-1. The Jenkins Server that execute the Builds needs to have access to the new IP
+1. The Jenkins Server that execute the Builds needs to have access to the new IP. Start Powershell in Admin Mode: **Start-Process -FilePath "powershell" -Verb RunAs**
 2. If Production Jenkins Server Need to talk to **IE.Storage & Virtualization Team** to (Mary DelGado) to map new IP to DNS
 3. If NOT production change hosts file on Windows machine **c:\Windows\system32\drivers\etc\hosts**
 
@@ -68,6 +70,8 @@ In this scenario we need to restore some SVN repositories
 
 ### Execute shell scripts on newly create P9 Instance
 ```bash
+
+> sudo su - 
 
 # 1 Create Svn dump of repository
 # Set character handling
@@ -90,6 +94,15 @@ cat /tmp/dbadv.... | less
 > cd test
 > svn log file:///tmp/restore/dbadv 
 > svn co  file:///tmp/restore/dbadv 
+
+# Setup new mounts for testing
+> umount /repos1
+> mv /tmp/restore/dbadv /repos1/
+
+# Testing Restore via Browser
+# Change your local hosts DNS to point to the new IP of this server
+# In Browser got to dbadv.svn.epnet.com  
+# If this works or looks good Tell Virtualization Team to swap DNS to new IPs
 
 
 ```
@@ -209,7 +222,11 @@ dbadv     - http://dbadv.svn.epnet.com/repo
 
  . [Svn Backup/Recovery Confluence Page](https://confluence.epnet.com/pages/viewpage.action?spaceKey=ART&title=SVN+backup+and+recovery)
 
+ . [GIT Repository backup Scripts](https://github.com/EBSCOIS/onprem.infrastructure.svn)
+
  . [Training Recording](https://ebscoind-my.sharepoint.com/:v:/g/personal/pdelaney_corp_epnet_com/EVP_vH92XTdFhhEyhwfiL-QBgJpUSlH6qxBsX7LtqIMSSQ?e=tMsQqv)
+
+ . [Training Last Recording](https://ebscoind-my.sharepoint.com/personal/susau_corp_epnet_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fsusau%5Fcorp%5Fepnet%5Fcom%2FDocuments%2FRecordings%2FSVN%20backuping%20and%20recovery%2D20210519%5F120510%2DMeeting%20Recording%2Emp4&parent=%2Fpersonal%2Fsusau%5Fcorp%5Fepnet%5Fcom%2FDocuments%2FRecordings&originalPath=aHR0cHM6Ly9lYnNjb2luZC1teS5zaGFyZXBvaW50LmNvbS86djovZy9wZXJzb25hbC9zdXNhdV9jb3JwX2VwbmV0X2NvbS9FWFJjbkVsWXlFbEdySkJna0JQX3JUSUJjLWxJaW5UeUxOT0R0TE1UV0prVnlnP3J0aW1lPW56YS1tc3dhMlVn)
 
  . [Training Recording Orig](https://web.microsoftstream.com/video/3d909eec-752d-4ca5-8164-cebb514c4bf6?App=msteamsBot&refId=f:f20e8175-e53f-6819-4f11-ee55448c3379)
 
