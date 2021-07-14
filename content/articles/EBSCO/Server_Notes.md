@@ -1,6 +1,6 @@
 Title:  EBSCO Servers
 Date: 2020-06-11 10:20
-Modified: 2020-10-27 19:30
+Modified: 2021-06-09 19:30
 Tags: shake-n-bake
 Category: EBSCO
 Slug: Server-Machines
@@ -20,14 +20,20 @@ Summary: EBSCO Server Machines List
 |**Int**     |10.80.96.176| ssh -i ~/.ssh/pdelaney cloud-user@<ip> |Tikal2019!   |
 |**PROD**    |10.81.98.78 | pdelaney                               |LDAP Password|
 |**SLS DEV** |10.81.97.58 | root                                   |Ebsco!!!     |
+|**SLS Jump**|10.80.105.56| admin                                  |Ebsco!!!     |
 
-** List of Servers **
-
-1. 
-
+** Jump Box to Access SLS Database **
+. edc-v-sls-mysql-jumpbox (10.80.106.56)  admin/Ebsco!!!   This is the box to access to execute MySqlDeveloper
+. Resides in EDC/SuperDelegatesOfOZ Project/Tenant
 
 # AOP Integration VM
 ssh -i ~/.ssh/pdelaney cloud-user@10.80.96.176  PassPhrase 'Tikal2019!'
 
+
+# P9 URL Machines:
+TBDs Tenants:  https://ecloud.ebsco.com/clarity/index.html#/dashboard           **tbdsuser/LLhjyuc36**
+SLS Tenants: https://ecloud.ebsco.com/clarity/index.html#/dashboard             **sdofozuser/AWfgRUye56%**
+SLS Tenants: https://ecloud.ebsco.com/clarity/index.html#/dashboard             **slsuser/Klugt44d**
+VersionControl Tenants: https://ecloud.ebsco.com/clarity/index.html#/dashboard  **versioncontrol/VhEyBXk7-yjLLUUF**
 
 ```

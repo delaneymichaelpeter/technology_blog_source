@@ -82,5 +82,9 @@ springerjournal/01-23-2020/0102AM/name.xml
 
  . https://ecloud.ebsco.com  **(slsuser/Klugt44d)**
 
+ . https://ecloud.ebsco.com  **tbdsuser/LLhjyuc36**
+
  . SDC login for Stratigic Pipeline:  **(sdcuser/tr1ckyPA$s)**
+
+
 

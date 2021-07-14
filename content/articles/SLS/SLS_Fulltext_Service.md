@@ -1,18 +1,38 @@
 Title:  Install SLS Fulltext Server on new P9/VM
 Date: 2021-05-27 10:20
-Modified: 2021-05-27 10:20
+Modified: 2021-06-28 10:20
 Tags: sls, dpl, fulltext
 Category: SLS
 Slug: Fulltext-Server-Install
 Authors: Peter Delaney 
-Summary: Install Fulltext Server on new VM
+Summary: Instructions on how to install NodeJs Fulltext Server on new server
+
+**nvm (Node Version Manager)**
+--
+Use this tool to install node different version on Linux machine [NVM Documentation](https://gist.github.com/d2s/372b5943bce17b964a79)
+
+```
+# First install nvm on linux machine
+yum update -y
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+nvm --help
+
+# List all node versions installed on machine Linux machine
+nvm ls
 
 
-eInstructions on how to install NodeJs Fulltext Server on new server
+# List of node Version that can be installed: https://nodejs.org/en/download/releases/
+# List of available node version
+nvm list-remote
+
+# Install Fulltext Node Required
+nvm install 4.6.2
 
 
 
-**These Instructions show how to start a new P9 VM and build from scratch**
+```
+**(Fulltext Server Install Instructions)**
+--
 ```
 # Create P9 Instance centos.c1.small  BIC-CentOS7-2021-02-02
 

@@ -1,6 +1,6 @@
 Title: Useful Linux Commands
 Date: 2020-01-12 10:20
-Modified: 2010-12-12 19:30
+Modified: 2011-06-10 19:30
 Tags: linux, bash
 Slug: useful-linux-commands
 Authors: Peter Delaney 
@@ -19,6 +19,12 @@ find . -name '*.log' -exec rm -fr {} \;
 ```bash
 find . -name '*.jar' -exec bash -c "echo {} && jar tvf {} | grep Name_Searching_For " \;
 ```
+
+**Find large files over 1 Gig and modified more than 10 days ago**
+```bash
+find . -size +1G -mtime +10 -type f -print
+```
+
 
 **See if a certain process is listening on a port**
 ```bash
