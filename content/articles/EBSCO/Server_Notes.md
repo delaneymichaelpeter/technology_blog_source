@@ -35,5 +35,8 @@ TBDs Tenants:  https://ecloud.ebsco.com/clarity/index.html#/dashboard           
 SLS Tenants: https://ecloud.ebsco.com/clarity/index.html#/dashboard             **sdofozuser/AWfgRUye56%**
 SLS Tenants: https://ecloud.ebsco.com/clarity/index.html#/dashboard             **slsuser/Klugt44d**
 VersionControl Tenants: https://ecloud.ebsco.com/clarity/index.html#/dashboard  **versioncontrol/VhEyBXk7-yjLLUUF**
+SDNEDN/Dev Tenants: https://ecloud.ebsco.com/clarity/index.html#/dashboard      **Content-Platform-Dev-User/88rrIH@!**
+SDNEDN/QA  Tenants: https://ecloud.ebsco.com/clarity/index.html#/dashboard      **Content-Platform-QA-User/77rrIH@!**
+
 
 ```
